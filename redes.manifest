@@ -1,0 +1,14 @@
+{
+	"name": "Redes",
+	"description": "Es un mashup con contactos de Google+, fotos de Flickr y mapas de OpenStreetMaps",
+	"launch_path": "/~jbazaco/practjb/mashup/redes.html",
+	"version": "1.0",
+	"icons":  {
+		"128": "/~jbazaco/practjb/mashup/firefox-icon-redes.png"
+	},
+	"developer": {
+		"name": "Jorge Bazaco Caloto",
+		"url": "http://watson.gsyc.es/~jbazaco/"
+	},
+	"default_locale": "es"
+}

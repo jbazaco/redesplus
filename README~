@@ -1,0 +1,97 @@
+Asignatura: Desarrollo de Aplicaciones Telemáticas
+Nombre: Jorge Bazaco Caloto
+Cuenta laboratorio: jbazaco
+
+URL Watson: http://watson.gsyc.es/~jbazaco/practjb/mashup/redes.html
+
+Parte obligatoria:
+-El mapa, a pesar de estar de fondo en toda la pantalla, la parte 
+pensada para interactuar con él es la columna de la izquierda. Cuando se 
+marquen las localizaciones de los comentarios del usuario, el mapa se 
+centra en la izquierda, mostrando todas las etiquetas en la zona 
+asignada para el mapa. Además, si se resalta un comentario pinchando 
+sobre él (y no sobre la marca del mapa), si la marca del mapa no está 
+visible se recentrará el mapa.
+
+-Los comentarios para ser resaltados, se debe pinchar sobre el enlace 
+que aparece en aquellos con localización (además de la opción de 
+marcarlos desde el mapa).
+
+
+Parte optativa:
+-Además de agregar usuarios con su id numérico se puede agregar a 
+aquellos que tienen un id de la forma +NombreUsuario.
+
+-Cuando se carga la página ésta se centra por defecto en España, pero si
+el usuario permite y soporta geolocalización, el mapa se centra en la
+localización del usuario.
+
+-Implementado OAuth 2.0 para la API de Google+, una vez autenticado al 
+ir a buscar nuevos usuarios aparecerá un botón que muestra a los 
+usuarios de tus circulos de Google+ a los que todavía no has agregado a 
+redes (de los circulos a los que hayas dado acceso al autenticarte por 
+primera vez). Los usuarios a los que ya tienes agregados no se muestran. 
+Mientras esté logeado el usuario además podrá agregarse refiriéndose a 
+sí mismo como 'me' (al cerrar o cambiar la sesión seguirá funcionando 
+ese usuario ya que al guardarlo utiliza su id númerica o la id +Usuario).
+
+-Además de mostrar las actividades, en caso de que tengan respuestas se 
+solicitan y se muestran junto a su comentario (plegadas inicialmente en
+un accordion de jquery-ui).
+
+-Los usuarios pueden ser recolocados utilizando sortable de jquery-ui, 
+aunque este orden no prevalece al recargar la página (en el caso de los
+usuarios situados a la derecha al moverlos sufren un offset, sin embargo 
+sigue siendo funcional y el usuario se quedará en la posición en la que
+se suelte el cursor como cabe esperar).
+
+-He utilizado https://github.com/lvoogdt/Leaflet.awesome-markers para 
+generar los dos iconos de los marcadores utilizados en el mapa (el 
+simplemente indicativo de la posición y el resaltado), sin tener que
+crear una imagen para el resaltado (para el normal se podría haber 
+utilizado el que tiene por defecto leaflet).
+
+-Con el plugin http://plugins.jquery.com/scrollTo/ de jQuery, hago un
+scroll hasta un usuario nuevo añadido, un usuario desplegado y hasta un
+comentario marcado desde el mapa si éste no está en la ventana (para
+saber si el comentario está o no en la ventana utilizo el plugin 
+http://www.appelsiini.net/projects/viewport que añade pseudoclases para 
+saber en que lugar está un elemento en relación a la ventana [arriba, 
+abajo, izquierda, derecha, en la ventana]).
+
+-He utilizado el plugin de jQuery http://plugins.jquery.com/slick/ para
+generar un carrusel vertical de fotos (para las fotos de flickr). Al 
+principio pensaba utilizar http://plugins.jquery.com/mosaicflow/, pero 
+al final decidí cambiar a una carrusel, lo comento porque decidí dejar 
+unas reglas CSS de éste pluggin mezcladas con slick (por ejemplo como 
+se muestra el título de una foto al dejar el cursor sobre ésta)
+
+-He utilizado el plugin http://plugins.jquery.com/sticky-kit/ para que 
+la barra derecha con las imágenes y el nombre de la localización siempre 
+estén en pantalla si lo está el contenedor principal (el de los usuarios), 
+se puede observar como arriba del todo está un poco más bajo y al hacer 
+un scroll pasa a ocupar una mayor parte de la pantalla (la que ocupaba 
+anteriormente la cabecera y el botón de iniciar/cerrar sesión).
+
+-Hay un fichero cache.manifest para permitir visualizar la aplicación 
+offline. Offline se tiene acceso a los usuarios aunque no se podrá ver
+su actividad y por tanto no se podrá interactuar con los marcadores ni 
+las fotos.
+
+-Hay un fichero redes.manifest y el icono firefox-redes-icon.png para 
+generar una aplicación de FirefoxOS (aunque la interfaz no está 
+optimizada para dispositivos móviles, de pantalla pequeña, porque al 
+diseñar la página el objetivo que buscaba era poder mostrar todo en una 
+sola pantalla, en la cual entrase todo en la ventana del navegador 
+[fotos, usuarios, mapa] y si lo hubiese diseñado para ambas tendría que 
+haber realizado un diseño totalmente diferente o hacer dos distintas). 
+Se puede probar desde el administrador de aplicaciones de Firefox 
+poniendo en el campo "Añadir aplicación alojada" la url 
+http://watson.gsyc.es/~jbazaco/practjb/mashup/redes.manifest
+
+URL video parte básica:
+http://youtu.be/aYs8-3fazOc
+
+URL video parte optativa:
+http://youtu.be/0O9ph_M-A5o
+
